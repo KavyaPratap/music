@@ -1,2 +1,2 @@
-web: pip install -r requirements.txt && python3 script.py
+web: pip install pytube && flask
 web: python app.py
