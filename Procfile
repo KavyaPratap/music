@@ -1,2 +1,1 @@
-
-web: python app.py
+web: pip3 install -r requirements.txt && python3 app.py
