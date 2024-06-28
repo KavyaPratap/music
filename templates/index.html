@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SARAS - Song Recommendation System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <nav>
+        <div class="nav-content">
+            <ul class="nav-links">
+                <li><a href="#" id="sarasLink"> <div class="logo-container">
+                    <img src="logo1.png" alt="Logo"></a> 
+                    <span class="saras-text">Saras</span></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <button class="toggle-button" id="toggleButton">&#9776;</button> <!-- Hamburger menu icon -->
+            <label class="switch">
+                <input type="checkbox" id="darkModeToggle">
+                <span class="slider round"></span>
+            </label>
+        </div>
+    </nav>
+
+    <div class="sidebar" id="sidebar">
+        <a href="javascript:void(0)" class="closebtn" id="closeSidebar">&times;</a>
+        <ul>
+            <li><a href="#" id="sarasLink"><div class="logo-container">
+                <img src="logo1.png" alt="Logo"></a> <!-- Replace with your actual logo image path -->
+                <span class="saras-text">Saras</span></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+            <li>
+                <label class="switch">
+                    <input type="checkbox" id="darkModeToggleSidebar">
+                    <span class="slider round"></span>
+                </label>
+            </li>
+        </ul>
+    </div>
+
+    <br><br>
+
+    <section id="moodLanguageSection">
+        <label for="mood">Select Mood:</label>
+        <select id="mood">
+            <option value="sad">Sad</option>
+            <option value="energetic">Energetic</option>
+            <option value="party">Party</option>
+            <option value="romantic">Romantic</option>
+            <option value="bhajan">Bhajan</option>
+            <!-- Add more options as needed -->
+        </select>
+        <label for="language">Select Language:</label>
+        <select id="language">
+            <option value="hindi">Hindi</option>
+            <option value="english">English</option>
+            <!-- Add more options as needed -->
+        </select>
+        <button id="getRecommendations">Get Recommendations</button>
+    </section>
+    
+    <section id="recommendationsSection" style="display: none;">
+        <h2 id="recommendationsTitle"></h2>
+        <div id="recommendations" class="container"></div>
+        <button id="moreSuggestions" style="display:none;">More suggestions???</button>
+    </section>
+
+    <div id="loadingAnimation" style="display: none;">
+        <div class="bike">
+            <svg class="bike" viewBox="0 0 48 30" width="48px" height="30px">
+                <g fill="none" stroke="#4B0082" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+                    <g transform="translate(9.5,19)">
+                        <circle class="bike__tire" r="9" stroke-dasharray="56.549 56.549" />
+                        <g class="bike__spokes-spin" stroke-dasharray="31.416 31.416" stroke-dashoffset="-23.562">
+                            <circle class="bike__spokes" r="5" />
+                            <circle class="bike__spokes" r="5" transform="rotate(180,0,0)" />
+                        </g>
+                    </g>
+                    <g transform="translate(24,19)">
+                        <g class="bike__pedals-spin" stroke-dasharray="25.133 25.133" stroke-dashoffset="-21.991" transform="rotate(67.5,0,0)">
+                            <circle class="bike__pedals" r="4" />
+                            <circle class="bike__pedals" r="4" transform="rotate(180,0,0)" />
+                        </g>
+                    </g>
+                    <g transform="translate(38.5,19)">
+                        <circle class="bike__tire" r="9" stroke-dasharray="56.549 56.549" />
+                        <g class="bike__spokes-spin" stroke-dasharray="31.416 31.416" stroke-dashoffset="-23.562">
+                            <circle class="bike__spokes" r="5" />
+                            <circle class="bike__spokes" r="5" transform="rotate(180,0,0)" />
+                        </g>
+                    </g>
+                    <polyline class="bike__seat" points="14 3,18 3" stroke-dasharray="5 5" />
+                    <polyline class="bike__body" points="16 3,24 19,9.5 19,18 8,34 7,24 19" stroke-dasharray="79 79" />
+                    <path class="bike__handlebars" d="m30,2h6s1,0,1,1-1,1-1,1" stroke-dasharray="10 10" />
+                    <polyline class="bike__front" points="32.5 2,38.5 19" stroke-dasharray="19 19" />
+                </g>
+            </svg>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
