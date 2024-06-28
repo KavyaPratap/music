@@ -116,4 +116,4 @@ def get_recommendations():
     return jsonify(paginated_videos)
 
 if __name__ == '__main__':
-    app.run(debug=False)
+    app.run(debug=False, port=5001)
